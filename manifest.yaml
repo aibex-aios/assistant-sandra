@@ -1,0 +1,9 @@
+name: assistant-sandra
+version: 0.1.0
+type: assistant
+description: Assistentin Sandra, entwickelt AIBOS-Pakete nach dem AI-Native SDLC Playbook, neutral gegenüber dem Host
+requires:
+  aios: ">=0.6,<0.7"
+contents:
+  assistants: [sandra]
+license: Apache-2.0
