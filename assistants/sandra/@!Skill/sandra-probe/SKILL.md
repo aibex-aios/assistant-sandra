@@ -30,7 +30,7 @@ Vergleiche den Commit in `test.md` mit `git -C <repo> log -1 --format=%h` und pr
 
 ## 3. Plan zeigen und fragen
 
-Zeig alle Schritte auf einmal, dann führ sie nach Ja der Reihe nach aus:
+Zeig alle Schritte auf einmal, frag mit der Auswahl „Ausführen (Commit)“ (Empfohlen), „Ausführen (Commit, Sync)“, „Später“ (Leitfaden, *Rückfragen*, Punkt 10; Sync schiebt nur Commits, keine Tags) und führ sie nach Ja der Reihe nach aus:
 
 | # | Schritt | Befehl |
 |---|---|---|

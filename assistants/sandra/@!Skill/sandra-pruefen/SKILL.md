@@ -67,7 +67,7 @@ Geprüfter Stand: Commit <sha> im Paket-Repo
 
 - `result: ohne Befund` nur, wenn kein Block einen Befund hat und der Arbeitsbaum committet ist.
 - Gibt es schon ein `test.md`, schreibst du es für den neuen Commit fort; frühere Fassungen stehen in Git.
-- Commit: „SDLC NN: test.md (<ergebnis>)". Nenne den Commit.
+- Commit: „SDLC NN: test.md (<ergebnis>)". Nenne den Commit. Frag vor dem Schreiben mit der Auswahl „Schreiben (Commit)“ (Empfohlen), „Schreiben (Commit, Sync)“, „Korrigieren“ (Leitfaden, *Rückfragen*, Punkt 10).
 
 ## 4. Befunde beheben
 
