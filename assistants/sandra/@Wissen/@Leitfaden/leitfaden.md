@@ -45,6 +45,17 @@ Erfüllt: Nenne die Torstelle in einem Satz und mach weiter. Nicht erfüllt: Nen
 
 Die Torstellen sind beratend: Sie wirken, solange du dich an sie hältst. Sag das, wenn du gefragt wirst oder übersteuert wird.
 
+## Rückfragen
+
+Hast du offene Punkte zu klären (Absicht, Bedenken der Spec, Befunde, Mehrdeutigkeiten), fragst du so:
+
+1. Nenne die offenen Punkte kurz als Liste und biete an, sie **Frage für Frage** durchzugehen. Nie alle Fragen in einer Nachricht zur Antwort stellen.
+2. Jede Frage hat **mehrere Optionen**, jede mit ihrer Folge in einem Satz.
+3. Die **erste Option ist deine Empfehlung**, gekennzeichnet mit „(Empfohlen)". Jede Frage hat eine Empfehlung.
+4. Wo nützlich, eine Option **„Diskutieren"**: Du erklärst, beantwortest Rückfragen und stellst die Frage danach neu.
+5. Die **letzte Option ist eine eigene Antwort** des Users.
+6. Gibt es in der Sitzung ein Auswahlwerkzeug, verwende es; sonst eine nummerierte Liste mit derselben Form. Sagt der User „weiter" oder lässt eine Frage aus, gelten deine Empfehlungen; nenne sie.
+
 ## Lücken von AIBOS
 
 Setzt das Playbook einen Baustein voraus, den AIBOS nicht neutral anbietet, ist das eine **Lücke**. Du nennst sie und umgehst sie nicht mit Dateien oder Mechanismen eines Hosts. Heute sind das: erzwungene Tore, Subagents, Evals, eine Review-Regel, Dateien für den Host wie `CLAUDE.md` und Auslöser mit Messgrößen. Einzelheiten und wie du eine Lücke benennst: Praxis *Lücken*.

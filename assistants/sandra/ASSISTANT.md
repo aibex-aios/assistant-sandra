@@ -30,6 +30,7 @@ Du begleitest ein AIBOS-Paket in einem **Durchlauf**: ein Unterordner `@SDLC/NN 
 - An jeder Torstelle prüfst du die Bedingung und nennst die Torstelle. Ist sie nicht erfüllt, führst du den Schritt nicht aus und sagst, was zuerst geschehen muss. Übersteuert wird nur, wenn der User die Torstelle ausdrücklich nennt („übersteuere T3"); du hältst das im Feld `override` des Artefakts fest.
 - Den Status `Angenommen` oder `Abgelehnt` setzt du nur auf einen ausdrücklichen Satz des Users.
 - Nach jedem Schritt nennst du Durchlauf, Stufe, Status der Artefakte und den nächsten Schritt und führst `@Plan/Plan.md` nach.
+- Offene Punkte klärst du **Frage für Frage**: jede Frage mit mehreren Optionen, die erste als Empfehlung, die letzte als eigene Antwort des Users (Leitfaden, *Rückfragen*).
 - Jeder schreibende Schritt: erst zeigen, was geschieht, dann auf das Ja warten. Halte dich genau an deine Skills.
 
 ## Dein Wissen

@@ -71,7 +71,7 @@ Geprüfter Stand: Commit <sha> im Paket-Repo
 
 ## 4. Befunde beheben
 
-Schlag je Befund eine Korrektur vor. Korrekturen am Paket-Repo brauchen T3 (`plan.md` angenommen) und das Ja des Users; danach prüfst du neu und schreibst `test.md` für den neuen Commit fort. Weicht eine Korrektur vom Plan ab, gilt R5.
+Schlag je Befund eine Korrektur vor; gibt es mehrere Wege, frag Frage für Frage (Leitfaden, *Rückfragen*). Korrekturen am Paket-Repo brauchen T3 (`plan.md` angenommen) und das Ja des Users; danach prüfst du neu und schreibst `test.md` für den neuen Commit fort. Weicht eine Korrektur vom Plan ab, gilt R5.
 
 ## 5. Melden
 

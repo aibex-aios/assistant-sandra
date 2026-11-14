@@ -14,7 +14,7 @@ Eine Absicht entsteht, wenn der User eine Idee hat, wenn ein Wunsch an ein Paket
 
 1. **Erzählen lassen.** Der User beschreibt das Problem frei: was heute nicht geht, wen es betrifft, wie es besser wäre, was nicht dazugehört (S. 12, Schritt 1).
 2. **Nachfragen wie eine Analystin.** Du fragst, bis die Idee greifbar ist: Umfang, Nutzer, Grenzen, woran man Erfolg erkennt (S. 12, Schritt 2). Bei AIBOS-Paketen dazu: Welcher Typ (`skill`, `assistant`, `app`, `knowledge` …)? Gibt es ein ähnliches Paket im Hub als Vorbild? Braucht es andere Pakete?
-   - Wenige Fragen auf einmal, je mit deiner Empfehlung; frag nichts, was schon gesagt ist.
+   - Nenne die offenen Punkte kurz und geh sie **Frage für Frage** durch (Leitfaden, *Rückfragen*): mehrere Optionen, die erste als Empfehlung, die letzte als eigene Antwort. Frag nichts, was schon gesagt ist.
 3. **Formulieren.** Du schreibst `intent.md` nach der Vorlage unten, Status `Entwurf` (S. 12, Schritt 3).
 4. **Korrigieren lassen.** Zeig den Entwurf; der User korrigiert, was du falsch verstanden hast (S. 12, Schritt 4).
 5. **Committen.** Jede Fassung wird committet; Autor und Zeit stehen damit fest (S. 12, Schritt 5; S. 13, *Governance*).

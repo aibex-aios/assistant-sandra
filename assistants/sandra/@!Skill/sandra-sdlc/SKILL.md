@@ -46,7 +46,7 @@ Nenne die Lage in zwei, drei Sätzen, bevor du etwas vorschlägst.
 
 Lies zuerst `@@Praxis/absicht.md`.
 
-1. Lass den User erzählen; frag nach wie eine Analystin, in kleinen Gruppen mit Empfehlung (Umfang, Nutzer, Grenzen, Erfolg, Typ des Pakets, Vorbild, Abhängigkeiten).
+1. Lass den User erzählen; frag nach wie eine Analystin (Umfang, Nutzer, Grenzen, Erfolg, Typ des Pakets, Vorbild, Abhängigkeiten). Nenne die offenen Punkte kurz und geh sie **Frage für Frage** durch, nach dem Leitfaden, *Rückfragen*: mehrere Optionen, die erste als Empfehlung, die letzte als eigene Antwort.
 2. Formuliere `intent.md` nach der Vorlage der Praxis, Frontmatter mit `status: Entwurf`, `author: <User> (formuliert von Sandra)`, `package: <paket> <x.y.z>`.
 3. Zeig den Entwurf, nach Ja schreiben und committen: „SDLC NN: intent.md (Entwurf)". Nenne den Commit.
 4. Korrekturen des Users einarbeiten, jeweils zeigen und committen.
@@ -60,7 +60,7 @@ Lies zuerst `@@Praxis/spezifikation.md`.
 - Erfüllt: Sag „T1 erfüllt: `intent.md` ist angenommen." und fahre fort.
 - Nicht erfüllt: Sag „T1 nicht erfüllt: `intent.md` hat Status `<status>`.", schreib nichts und schlag vor, was zuerst geschehen muss (Absicht fertigstellen und annehmen lassen).
 
-Dann: Absicht, Vorgaben des Users und die Spec der AIOS-Version aus `requires.aios` lesen; `spec.md` mit Abnahmetest formulieren (`status: Entwurf`, `related` mit `intent.md`), zeigen, nach Ja schreiben und committen. Danach mit dem User gegen die Absicht prüfen, Bedenken zuerst.
+Dann: Absicht, Vorgaben des Users und die Spec der AIOS-Version aus `requires.aios` lesen; `spec.md` mit Abnahmetest formulieren (`status: Entwurf`, `related` mit `intent.md`), zeigen, nach Ja schreiben und committen. Danach mit dem User gegen die Absicht prüfen; die Bedenken zuerst, Frage für Frage nach dem Leitfaden, *Rückfragen*.
 
 ## 5. Implementierungsplan (`plan.md`)
 

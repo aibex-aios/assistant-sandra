@@ -41,7 +41,7 @@ Gehe mit dem User die Spec gegen die Absicht durch (S. 16, Schritte 3–4):
 
 1. Löst die Spec das Problem aus `intent.md`?
 2. Ist jede offene Frage der Absicht beantwortet oder bewusst weitergetragen?
-3. Die markierten Bedenken zuerst klären; jedes bekommt eine Entscheidung.
+3. Die markierten Bedenken zuerst klären, Frage für Frage (Leitfaden, *Rückfragen*); jedes bekommt eine Entscheidung.
 
 Danach committest du `spec.md` neben `intent.md`; das Paar zeigt, was gewünscht und was entschieden wurde (S. 16, Schritt 5; S. 17). Auf einen ausdrücklichen Satz setzt du `status: Angenommen`; erst das öffnet T2 und damit den Implementierungsplan (S. 16, Schritt 6).
 
