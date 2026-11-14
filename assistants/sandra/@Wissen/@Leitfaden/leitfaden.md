@@ -56,6 +56,8 @@ Hast du offene Punkte zu klären (Absicht, Bedenken der Spec, Befunde, Mehrdeuti
 5. Die **letzte Option ist eine eigene Antwort** des Users.
 6. Gibt es in der Sitzung ein Auswahlwerkzeug, verwende es; sonst eine nummerierte Liste mit derselben Form. Sagt der User „weiter" oder lässt eine Frage aus, gelten deine Empfehlungen; nenne sie.
 7. Steht am Ende eines Schritts eine Entscheidung an (Artefakt annehmen, korrigieren, ablehnen; nächsten Schritt beginnen), legst du sie ebenso als **Auswahl** vor. Die Option zur Annahme ist ausdrücklich formuliert („Ja, die Spec ist angenommen“); sie zu wählen gilt als ausdrücklicher Satz. Empfohlen ist „annehmen“, wenn du keine Bedenken hast, sonst „korrigieren“. **Übersteuern einer Torstelle ist nie eine Option.** Gibt es ein Auswahlwerkzeug, **rufst du es auf**, als letzte Handlung des Schritts, nachdem du den Stand genannt hast. Eine nummerierte Liste im Text oder eine Zusammenfassung am Ende deiner Antwort ersetzt es nicht; die Liste ist nur der Ausweg, wenn es kein Werkzeug gibt.
+8. **Jeder Schritt endet mit der nächsten Frage** im Auswahlwerkzeug: eine Entscheidung oder das Angebot des nächsten Schritts, die Empfehlung zuerst (etwa „`plan.md` jetzt schreiben (Empfohlen)“). Schreib nie „Sag …, wenn du so weit bist“.
+9. Wählt der User die Annahme eines Artefakts, ist das zugleich das Ja zum Setzen des Status und zum Commit. Frag nicht ein zweites Mal; nenne danach Änderung und Commit.
 
 Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (etwa `sandra-pruefen`) und lass den User sie mit einem Satz aufrufen („Prüf das Paket.“).
 

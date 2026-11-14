@@ -76,8 +76,8 @@ Dann: `plan.md` mit den vier Teilen (Dateien, die sich ändern; Reihenfolge der 
 ## 6. Status setzen
 
 - `Angenommen` oder `Abgelehnt` setzt du **nur auf einen ausdrücklichen Satz** des Users zu genau diesem Artefakt („die Spec ist angenommen", „nimm den Plan an"). Eine Zustimmung zu einer Einzelheit genügt nicht; frag dann nach.
-- Die Annahme legst du am Ende des Schritts als **Auswahl** vor, mit dem Auswahlwerkzeug, wenn es eines gibt, nicht als Liste im Text (Leitfaden, *Rückfragen*, Punkt 7): zuerst die Empfehlung, etwa „Ja, die Spec ist angenommen“, dann „Korrigieren: …“, „Ablehnen“, zuletzt die eigene Antwort. Die Annahme zu wählen gilt als ausdrücklicher Satz. Übersteuern ist nie eine Option.
-- Zeig die Änderung im Frontmatter (`status`, `date`), nach Ja schreiben und committen: „SDLC NN: <datei> angenommen".
+- Die Annahme legst du am Ende des Schritts als **Auswahl** vor, mit dem Auswahlwerkzeug, wenn es eines gibt, nicht als Liste im Text (Leitfaden, *Rückfragen*, Punkt 7): zuerst die Empfehlung, etwa „Ja, die Spec ist angenommen“, dann „Korrigieren: …“, „Ablehnen“, zuletzt die eigene Antwort. Die Annahme zu wählen gilt als ausdrücklicher Satz und zugleich als Ja zum Setzen des Status und zum Commit; frag nicht ein zweites Mal (Punkt 9). Übersteuern ist nie eine Option.
+- Setz `status` (und `date`), committe „SDLC NN: <datei> angenommen" und nenne Änderung und Commit. Kam die Annahme als Satz statt aus der Auswahl, gilt der Satz ebenso.
 - **Rückfall (R4):** Ändert sich ein angenommenes Artefakt inhaltlich, setzt du es im selben Commit auf `Entwurf` zurück und sagst, welche Torstelle dadurch wieder offen ist (T1 für die Spec, T2 für den Plan, T3 für das Paket-Repo). Rein redaktionelle Korrekturen (Tippfehler) lassen den Status; nenne sie als solche.
 
 ## 7. Übersteuern
@@ -105,7 +105,7 @@ Nach jedem Schritt nennst du:
 
 Den Stand bestimmst du immer aus `@SDLC/` (Dateien, `status`, `git log`). Einen Projektplan legst du nicht an, schlägst ihn nicht vor und führst ihn nicht nach. **Gibt es im Projekt kein `@Plan/`, erwähnst du ihn nicht.** Gibt es einen, gilt die Regel des Users dazu.
 
-Steht danach eine Entscheidung an (annehmen, korrigieren, nächster Schritt), rufst du dafür das Auswahlwerkzeug auf, als letzte Handlung des Schritts (Leitfaden, *Rückfragen*, Punkt 7). Eine Liste im Text genügt nur, wenn es kein Werkzeug gibt.
+Steht danach eine Entscheidung an (annehmen, korrigieren, nächster Schritt), rufst du dafür das Auswahlwerkzeug auf, als letzte Handlung des Schritts (Leitfaden, *Rückfragen*, Punkt 7). Eine Liste im Text genügt nur, wenn es kein Werkzeug gibt. Steht keine Entscheidung an, bietest du den nächsten Schritt an (etwa „`plan.md` jetzt schreiben (Empfohlen)“, „Später“); **jeder Schritt endet mit dieser Frage** (Punkt 8).
 
 ## Grenzen
 

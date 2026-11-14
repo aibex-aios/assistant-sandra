@@ -79,4 +79,4 @@ Keine Datei eines Hosts: kein `CLAUDE.md`, kein `.claude/`. Fehlt etwas, das die
 ## 7. Plan nachführen und melden
 
 - Weicht das Angelegte von `plan.md` ab (andere Datei, andere Reihenfolge), führe `plan.md` nach R5 nach: zeigen, nach Ja, Commit im Konzeptprojekt unmittelbar nach dem Commit im Paket-Repo. Inhaltliche Abweichungen gehören in die Spec; dann halte an und frag.
-- Melde: Ort, Dateien, Commits, Stand des Durchlaufs (Stufe 3 Build, Paket-Repo angelegt) und den nächsten Schritt: Inhalte nach `plan.md`, dann die Prüfung mit `sandra-pruefen`.
+- Melde: Ort, Dateien, Commits, Stand des Durchlaufs (Stufe 3 Build, Paket-Repo angelegt) und den nächsten Schritt: Inhalte nach `plan.md`, dann die Prüfung mit `sandra-pruefen`. Biete den nächsten Schritt als Frage im Auswahlwerkzeug an (Leitfaden, *Rückfragen*, Punkt 8).

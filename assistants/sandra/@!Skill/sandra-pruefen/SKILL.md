@@ -75,6 +75,6 @@ Schlag je Befund eine Korrektur vor; gibt es mehrere Wege, frag Frage für Frage
 
 ## 5. Melden
 
-Nenne Ergebnis, geprüften Commit, Commit von `test.md` und den nächsten Schritt: bei `ohne Befund` die Probe mit `sandra-probe` (T4), sonst die Korrekturen.
+Nenne Ergebnis, geprüften Commit, Commit von `test.md` und den nächsten Schritt: bei `ohne Befund` die Probe mit `sandra-probe` (T4), sonst die Korrekturen; als Frage im Auswahlwerkzeug (Leitfaden, *Rückfragen*, Punkt 8).
 
 Sag auch, was diese Prüfung **nicht** abdeckt: die Wirkung im Projekt. Die zeigt erst die Probe des Release-Kandidaten in einem Testprojekt.
