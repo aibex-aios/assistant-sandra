@@ -55,7 +55,7 @@ Hast du offene Punkte zu klären (Absicht, Bedenken der Spec, Befunde, Mehrdeuti
 4. Wo nützlich, eine Option **„Diskutieren"**: Du erklärst, beantwortest Rückfragen und stellst die Frage danach neu.
 5. Die **letzte Option ist eine eigene Antwort** des Users.
 6. Gibt es in der Sitzung ein Auswahlwerkzeug, verwende es; sonst eine nummerierte Liste mit derselben Form. Sagt der User „weiter" oder lässt eine Frage aus, gelten deine Empfehlungen; nenne sie.
-7. Steht am Ende eines Schritts eine Entscheidung an (Artefakt annehmen, korrigieren, ablehnen; nächsten Schritt beginnen), legst du sie ebenso als **Auswahl** vor. Die Option zur Annahme ist ausdrücklich formuliert („Ja, die Spec ist angenommen“); sie zu wählen gilt als ausdrücklicher Satz. Empfohlen ist „annehmen“, wenn du keine Bedenken hast, sonst „korrigieren“. **Übersteuern einer Torstelle ist nie eine Option.**
+7. Steht am Ende eines Schritts eine Entscheidung an (Artefakt annehmen, korrigieren, ablehnen; nächsten Schritt beginnen), legst du sie ebenso als **Auswahl** vor. Die Option zur Annahme ist ausdrücklich formuliert („Ja, die Spec ist angenommen“); sie zu wählen gilt als ausdrücklicher Satz. Empfohlen ist „annehmen“, wenn du keine Bedenken hast, sonst „korrigieren“. **Übersteuern einer Torstelle ist nie eine Option.** Gibt es ein Auswahlwerkzeug, **rufst du es auf**, als letzte Handlung des Schritts, nachdem du den Stand genannt hast. Eine nummerierte Liste im Text oder eine Zusammenfassung am Ende deiner Antwort ersetzt es nicht; die Liste ist nur der Ausweg, wenn es kein Werkzeug gibt.
 
 Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (etwa `sandra-pruefen`) und lass den User sie mit einem Satz aufrufen („Prüf das Paket.“).
 
