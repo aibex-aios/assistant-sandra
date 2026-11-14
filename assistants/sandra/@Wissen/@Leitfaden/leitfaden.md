@@ -28,7 +28,7 @@ Ein **Durchlauf** ist ein Kreislauf für eine Änderung, meist eine Version eine
 - **Pflege:** Artefakte werden laufend nachgeführt, Git hält die Fassungen. Sie wiederholen sich nicht, widersprechen sich nicht und verweisen aufeinander. Weicht die Umsetzung von `plan.md` ab, führst du `plan.md` im selben Commit nach (S. 20). Jedes Artefakt wird committet; du nennst den Commit.
 - **Ende:** Ein abgeschlossener Durchlauf bleibt liegen, als Prüfpfad. Ein neuer Befund beginnt einen neuen Durchlauf.
 
-Daneben: `@Memo/` ist das Notizbuch für Gedankengänge und Entscheidungen, Memos werden nie geändert. `@Plan/Plan.md` nennt für den nächsten Chat den laufenden Durchlauf, seine Stufe und die nächste Torstelle. `@/@Rule/` hält Wissen, das über einen Durchlauf hinaus gilt. `@Package/<paket>/` ist das Paket-Repo.
+Daneben: `@Memo/` ist das Notizbuch für Gedankengänge und Entscheidungen, Memos werden nie geändert. Einen Projektplan führst du nicht: Der Stand steht in `@SDLC/`. Gibt es im Projekt kein `@Plan/`, erwähnst du ihn nicht. `@/@Rule/` hält Wissen, das über einen Durchlauf hinaus gilt. `@Package/<paket>/` ist das Paket-Repo.
 
 ## Torstellen
 
@@ -55,6 +55,9 @@ Hast du offene Punkte zu klären (Absicht, Bedenken der Spec, Befunde, Mehrdeuti
 4. Wo nützlich, eine Option **„Diskutieren"**: Du erklärst, beantwortest Rückfragen und stellst die Frage danach neu.
 5. Die **letzte Option ist eine eigene Antwort** des Users.
 6. Gibt es in der Sitzung ein Auswahlwerkzeug, verwende es; sonst eine nummerierte Liste mit derselben Form. Sagt der User „weiter" oder lässt eine Frage aus, gelten deine Empfehlungen; nenne sie.
+7. Steht am Ende eines Schritts eine Entscheidung an (Artefakt annehmen, korrigieren, ablehnen; nächsten Schritt beginnen), legst du sie ebenso als **Auswahl** vor. Die Option zur Annahme ist ausdrücklich formuliert („Ja, die Spec ist angenommen“); sie zu wählen gilt als ausdrücklicher Satz. Empfohlen ist „annehmen“, wenn du keine Bedenken hast, sonst „korrigieren“. **Übersteuern einer Torstelle ist nie eine Option.**
+
+Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (etwa `sandra-pruefen`) und lass den User sie mit einem Satz aufrufen („Prüf das Paket.“).
 
 ## Lücken von AIBOS
 
@@ -65,7 +68,7 @@ Setzt das Playbook einen Baustein voraus, den AIBOS nicht neutral anbietet, ist 
 Maßgeblich ist Spec 01 von AIOS. Kurz:
 
 - **Paket:** versionierte Einheit mit `manifest.yaml` in einem eigenen Git-Repo; Version gleich Tag `v<x.y.z>`. **Element:** Skill, Assistent, Wissen oder Befehl darin.
-- **Konzeptprojekt:** das AIOS-Projekt mit `@/`, in dem ein Paket entsteht; es hält `@SDLC/`, `@Memo/`, `@Plan/` und `@Package/`.
+- **Konzeptprojekt:** das AIOS-Projekt mit `@/`, in dem ein Paket entsteht; es hält `@SDLC/`, `@Memo/` und `@Package/`.
 - **Masterspace:** ein Ordner `@/` mit Unterordnern je Klasse (etwa `@Rule/`); das geladene Wissen der Masterspaces entlang der Kette vom Vault bis zum Projekt bildet den Master-Kontext.
 - **holen** (`aios --fetch`) gilt für Pakete, **ausrollen** für Elemente, **registrieren** für Skills beim Host. Was dabei für den Host entsteht (etwa `.claude/skills/`), ist Build-Output, nie Quelle.
 - **Weiterleiter:** `~/.aios/bin/aios`, meist nicht im `PATH`; aufgerufen mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>`, als einzelner Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.

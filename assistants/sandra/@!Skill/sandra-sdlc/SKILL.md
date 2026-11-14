@@ -4,22 +4,22 @@ version: 0.1.0
 description: >
   Führt einen Durchlauf des SDLC für ein AIBOS-Paket in @SDLC/: Durchlauf anlegen oder
   fortsetzen, intent.md mit dem User erarbeiten, spec.md nach der angenommenen Absicht (T1),
-  plan.md nach der angenommenen Spec (T2), Status nur auf ausdrücklichen Satz, Stand nennen
-  und @Plan/Plan.md nachführen. Verwenden bei "neuer Durchlauf", "Absicht", "intent",
+  plan.md nach der angenommenen Spec (T2), Status nur auf ausdrücklichen Satz, Entscheidungen
+  als Auswahl, Stand aus @SDLC/ nennen. Verwenden bei "neuer Durchlauf", "Absicht", "intent",
   "Spec schreiben", "Plan schreiben", "Wo steht der Durchlauf?", "nimm … an".
 ---
 
 # Durchlauf im SDLC
 
-Ein Skill der Assistentin Sandra. Er schreibt nur im Konzeptprojekt: in `@SDLC/` und in `@Plan/Plan.md`. Das Paket-Repo fasst er nicht an; dafür gibt es `sandra-anlegen` (T3).
+Ein Skill der Assistentin Sandra. Er schreibt nur im Konzeptprojekt, in `@SDLC/`. Das Paket-Repo fasst er nicht an; dafür gibt es `sandra-anlegen` (T3).
 
 **Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Jeder schreibende Schritt: erst zeigen, was geschieht (Datei, Inhalt bzw. Änderung, Commit), dann auf das Ja warten, dann ausführen. Der Wunsch des Users („schreib die Spec") ist keine Bestätigung des Plans.
 
 ## 1. Lage feststellen
 
 1. **Konzeptprojekt:** der nächste Ordner mit `@/` vom Arbeitsverzeichnis aufwärts. Gibt es keinen, brich ab und sag es.
-2. **Durchläufe:** Lies `@SDLC/` (bei mehreren Paketen `@SDLC/<paket>/`) und `@Plan/Plan.md`, falls vorhanden.
-3. **Absicht des Users:** Nennt er einen Durchlauf oder ein Paket, nimm diesen. Sonst den laufenden aus dem Plan bzw. den mit der höchsten Nummer, dessen Artefakte nicht alle angenommen sind. Gibt es keinen und will der User etwas Neues: Schritt 2.
+2. **Durchläufe:** Lies `@SDLC/` (bei mehreren Paketen `@SDLC/<paket>/`) .
+3. **Absicht des Users:** Nennt er einen Durchlauf oder ein Paket, nimm diesen. Sonst den mit der höchsten Nummer, dessen Artefakte nicht alle angenommen sind. Gibt es keinen und will der User etwas Neues: Schritt 2.
 4. **Stufe** des Durchlaufs aus seinen Dateien und deren `status`:
 
 | vorhanden | Stufe | nächster Schritt |
@@ -76,6 +76,7 @@ Dann: `plan.md` mit den vier Teilen (Dateien, die sich ändern; Reihenfolge der 
 ## 6. Status setzen
 
 - `Angenommen` oder `Abgelehnt` setzt du **nur auf einen ausdrücklichen Satz** des Users zu genau diesem Artefakt („die Spec ist angenommen", „nimm den Plan an"). Eine Zustimmung zu einer Einzelheit genügt nicht; frag dann nach.
+- Die Annahme legst du am Ende des Schritts als **Auswahl** vor (Leitfaden, *Rückfragen*, Punkt 7): zuerst die Empfehlung, etwa „Ja, die Spec ist angenommen“, dann „Korrigieren: …“, „Ablehnen“, zuletzt die eigene Antwort. Die Annahme zu wählen gilt als ausdrücklicher Satz. Übersteuern ist nie eine Option.
 - Zeig die Änderung im Frontmatter (`status`, `date`), nach Ja schreiben und committen: „SDLC NN: <datei> angenommen".
 - **Rückfall (R4):** Ändert sich ein angenommenes Artefakt inhaltlich, setzt du es im selben Commit auf `Entwurf` zurück und sagst, welche Torstelle dadurch wieder offen ist (T1 für die Spec, T2 für den Plan, T3 für das Paket-Repo). Rein redaktionelle Korrekturen (Tippfehler) lassen den Status; nenne sie als solche.
 
@@ -93,7 +94,7 @@ Ein bloßer Auftrag („schreib trotzdem die Spec") ist kein Übersteuern; frag 
 
 Meldet `sandra-anlegen` oder eine spätere Änderung im Paket-Repo, dass die Umsetzung von `plan.md` abweicht, führst du `plan.md` nach: zeigen, nach Ja schreiben, Commit im Konzeptprojekt unmittelbar nach dem Commit im Paket-Repo; nenne beide. Ist die Abweichung inhaltlich, gehört sie in die Spec (zurück zu Schritt 4, R4).
 
-## 9. Stand und Plan
+## 9. Stand
 
 Nach jedem Schritt nennst du:
 
@@ -102,7 +103,9 @@ Nach jedem Schritt nennst du:
 - die nächste Torstelle und den nächsten Schritt;
 - die Commits dieses Schritts.
 
-Gibt es `@Plan/Plan.md`, führst du dort den laufenden Durchlauf, seine Stufe und die nächste Torstelle nach (zeigen, nach Ja, im Commit des Schritts). Gibt es ihn nicht, schlag ihn einmal vor.
+Den Stand bestimmst du immer aus `@SDLC/` (Dateien, `status`, `git log`). Einen Projektplan legst du nicht an, schlägst ihn nicht vor und führst ihn nicht nach. **Gibt es im Projekt kein `@Plan/`, erwähnst du ihn nicht.** Gibt es einen, gilt die Regel des Users dazu.
+
+Steht danach eine Entscheidung an (annehmen, korrigieren, nächster Schritt), legst du sie als Auswahl vor (Leitfaden, *Rückfragen*, Punkt 7).
 
 ## Grenzen
 

@@ -12,7 +12,7 @@ Das Playbook gibt der KI ihr Projektwissen über eine Datei des Hosts: `CLAUDE.m
 |---|---|---|
 | Konventionen, die in jedem Chat gelten (z. B. Ablage, Namen, Sprache) | `@/@Rule/<Thema>.md` | geladen |
 | Nachschlagewissen, das nur bei Bedarf gebraucht wird | `@/@@<Thema>/…` | verfügbar, nur im Inhaltsverzeichnis |
-| Stand des Projekts für den nächsten Chat | `@Plan/Plan.md` | kein Masterspace, aber zu Beginn gelesen, wenn eine Regel des Users das verlangt |
+| Stand eines Durchlaufs | `@SDLC/NN …/` (Dateien und `status`) | kein Masterspace; einen eigenen Projektplan führst du nicht |
 | Entscheidungen eines Durchlaufs | `@SDLC/NN …/`, `@Memo/` | kein Masterspace |
 
 Geladenes Wissen der Masterspaces gilt entlang der Kette: Eine Regel im `@/` eines übergeordneten Ordners gilt für alle Projekte darunter. Leg eine Regel darum so tief wie möglich und so hoch wie nötig ab.

@@ -25,7 +25,7 @@ Bestimme Durchlauf und Paket-Repo wie `sandra-pruefen`. Lies `test.md`, `spec.md
 Vergleiche den Commit in `test.md` mit `git -C <repo> log -1 --format=%h` und prüfe, dass der Arbeitsbaum committet ist.
 
 - Erfüllt: Sag „T4 erfüllt: `test.md` ist ohne Befund für Commit `<sha>`." und fahre fort.
-- Nicht erfüllt: Sag „T4 nicht erfüllt: <fehlt `test.md` | `result: Befunde` | `test.md` gilt für `<sha>`, aktuell ist `<sha>`>.", tagge nicht und schlag `/sandra-pruefen` vor.
+- Nicht erfüllt: Sag „T4 nicht erfüllt: <fehlt `test.md` | `result: Befunde` | `test.md` gilt für `<sha>`, aktuell ist `<sha>`>.", tagge nicht und schlag die Prüfung mit `sandra-pruefen` vor.
 - Übersteuern nur auf einen ausdrücklichen Satz („übersteuere T4"): Sag, dass die Torstellen beratend sind; trag `override` (Torstelle, Datum, Satz) in `plan.md` ein und nenne es im Bericht.
 
 ## 3. Plan zeigen und fragen
