@@ -1,6 +1,6 @@
 # Praxis — Spezifikation (`spec.md`)
 
-Stufe 2 *Design*. Quellen: Playbook S. 15–17; Praxis *Vorgaben*; Spec von AIOS 03 (Skills und Assistenten), 06 (Pakete); dein Leitfaden (*Torstellen*, T1).
+Stufe 2 *Design*. Quellen: Playbook S. 15–17; Praxis *Vorgaben*; Spec von AIBOS 03 (Skills und Assistenten), 06 (Pakete); dein Leitfaden (*Torstellen*, T1).
 
 ## Wozu
 
@@ -9,7 +9,7 @@ Die Spec übersetzt die angenommene Absicht in etwas, nach dem gebaut werden kan
 ## Vor dem Schreiben
 
 - **T1:** `intent.md` hat `status: Angenommen`. Sonst schreibst du nicht und sagst, was fehlt.
-- Lies die Absicht ganz und die Spec der AIOS-Version aus `requires.aios`.
+- Lies die Absicht ganz und die Spec der AIBOS-Version aus `requires.aibos`.
 - Sammle die **Vorgaben**: die geladenen Regeln deines Master-Kontexts, die das Paket betreffen, mit Stand und Eigentümer (Praxis *Vorgaben*). Im Playbook übernehmen diese Rolle die Skills der Organisation (S. 15, 17).
 
 ## Inhalt
@@ -35,7 +35,7 @@ Der Abnahmetest ist das Herz der Spec: Er sagt vorab, woran „fertig" erkannt w
 - Aus Sicht des Users, mit echten Aufrufen: ein Skill als ganzer Prompt `/<skill> …`, ein Assistent im Testprojekt zugeordnet.
 - Er läuft auf einem **Release-Kandidaten** `v<x.y.z>-rc<n>` in einem eigenen Testprojekt; den Ablauf kennt die Praxis *Prüfen und Probe*.
 - Ordne die Schritte nach ihren Abhängigkeiten; was erst nach dem Holen gilt, kommt danach.
-- Jeder Befehl von `aios` darin muss so in der Spec von AIOS stehen; erfinde keine Option.
+- Jeder Befehl von `aibos` darin muss so in der Spec von AIBOS stehen; erfinde keine Option.
 
 ## Prüfen mit dem User
 
@@ -59,6 +59,6 @@ Das Playbook misst diesen Play mit zwei Werten aus Git (S. 17). Du nennst sie im
 ## Fallen
 
 - **Spec ohne Abnahmetest:** Dann gibt es später keinen Maßstab für T4 und die Probe.
-- **Erfundene Felder:** Manifest- und Frontmatter-Felder nur nach der Spec von AIOS (06 *`manifest.yaml`*, 03 *Format eines Skills*, *Assistenten*).
+- **Erfundene Felder:** Manifest- und Frontmatter-Felder nur nach der Spec von AIBOS (06 *`manifest.yaml`*, 03 *Format eines Skills*, *Assistenten*).
 - **Änderung nach der Annahme:** Fällt die Spec auf `Entwurf` zurück, gilt T2 erneut; ein schon angenommener Plan muss geprüft werden.
 - **Spät gefundene Lücke:** Zeigt sich beim Bauen, dass die Spec etwas offenlässt, kehrst du zur Spec zurück, statt still im Paket zu entscheiden. Das Playbook zählt solche Nacharbeit nach dem ersten `plan.md` als Spätindikator (S. 17).

@@ -1,6 +1,6 @@
 ---
 name: sandra-anlegen
-version: 0.2.0
+version: 0.3.0
 description: >
   Legt das Paket-Repo eines AIBOS-Pakets nach dem angenommenen plan.md eines Durchlaufs an
   (Torstelle T3): Typ und Name nach dem Namensschema, Ort nach den Vorgaben des Users, Aufbau
@@ -36,9 +36,9 @@ Lies `spec.md` und `plan.md` des Durchlaufs. Daraus:
 |---|---|
 | Typ und Name | `spec.md`; Name `<typ>-<name>`, Element `<name>` (Praxis *Pakete*, *Namen*) |
 | `description` | ein Satz aus `spec.md` |
-| `requires.aios` | `">=0.6,<0.7"`, außer `spec.md` nennt anderes |
+| `requires.aibos` | `">=0.7,<0.8"`, außer `spec.md` nennt anderes; `requires.aios` mit `<0.7` holt AIBOS 0.7 nicht (Spec 06, *Alter Schlüssel bis 0.8*) |
 | Dateien | `plan.md`, *Dateien, die sich ändern* |
-| Ort | Vorgaben des Users (Regel *AIOS-Pakete — Vorgaben*, falls geladen); sonst `<konzeptprojekt>/@Package/<paket>/` |
+| Ort | Vorgaben des Users (Regel *AIBOS-Pakete — Vorgaben*, bis 0.8 auch *AIOS-Pakete — Vorgaben*, falls geladen); sonst `<konzeptprojekt>/@Package/<paket>/` |
 | Lizenz | Vorgaben des Users; ohne Vorgabe offen lassen und nennen |
 
 Gibt es den Zielordner schon, brich ab und sag es.
@@ -68,9 +68,9 @@ Schreibe erst nach Ja.
 
 1. Zielordner anlegen, `git -C <repo> init -b main`.
 2. `manifest.yaml` mit `version: 0.1.0` und `contents` passend zu den Ordnern; jeder Skill und Assistent mit `version: 0.1.0` im Frontmatter.
-3. Elemente nach `spec.md`: bei Skills `SKILL.md` mit `name`, `version`, `description` und einem Ablauf, der bei jedem schreibenden Schritt erst den Plan zeigt und fragt. Ruft ein Skill `aios` auf, bekommt er den Satz: „Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung."
+3. Elemente nach `spec.md`: bei Skills `SKILL.md` mit `name`, `version`, `description` und einem Ablauf, der bei jedem schreibenden Schritt erst den Plan zeigt und fragt. Ruft ein Skill `aibos` auf, bekommt er den Satz: „Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung."
 4. Lizenz: bei Apache-2.0 `LICENSE` als unveränderte Kopie des Lizenztexts (etwa aus dem Paket dieser Assistentin oder der Vorlage), `NOTICE` mit Paketname, Copyright-Zeile und, falls vorgegeben, dem Satz zu den Marken.
-5. `README.md`: Zweck, Voraussetzung (AIOS v0.6), Holen mit `aios --fetch <paket>`, Aufruf, Lizenz.
+5. `README.md`: Zweck, Voraussetzung (AIBOS v0.7), Holen mit `aibos --fetch <paket>`, Aufruf, Lizenz.
 6. Commit im Paket-Repo: „<paket> 0.1.0: angelegt aus <vorlage>" (bzw. „ohne Vorlage"). **Kein Tag**; getaggt wird erst der Release-Kandidat mit `sandra-probe` (T4).
 7. Falls nötig: `/@Package/` in die `.gitignore` des Konzeptprojekts, dort nur diese Zeile committen.
 

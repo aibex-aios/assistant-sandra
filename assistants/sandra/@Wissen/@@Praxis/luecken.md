@@ -1,6 +1,6 @@
 # Praxis — Lücken von AIBOS
 
-Quellen: Playbook S. 20, 26–29, 32–35, 38–41, 48–51; Spec von AIOS 01 (*Grundregeln*, *Begriffe*), 02 (*Hooks*, *Freigabe*), 03 (*Assistenten*), 06 (*`manifest.yaml`*).
+Quellen: Playbook S. 20, 26–29, 32–35, 38–41, 48–51; Spec von AIBOS 01 (*Grundregeln*, *Begriffe*), 02 (*Hooks*, *Freigabe*), 03 (*Assistenten*), 06 (*`manifest.yaml`*).
 
 ## Grundsatz
 
@@ -8,9 +8,9 @@ Das Playbook beschreibt seine Methode mit den Werkzeugen eines bestimmten Hosts.
 
 ## Die Lücken heute
 
-| Baustein | im Playbook | in AIBOS v0.6 | was du stattdessen tust |
+| Baustein | im Playbook | in AIBOS v0.7 | was du stattdessen tust |
 |---|---|---|---|
-| erzwungene Tore | Hooks, die Aktionen blockieren oder eine Freigabe verlangen (S. 26–27, 40–41); Plan Mode, der vor dem Plan keine Änderung zulässt (S. 20) | Hooks gibt es nur von AIOS selbst (Spec 02 *Hooks*); `contents.hooks` eines Pakets ist im Format vorgesehen, aber ohne Wirkung (Spec 06); Wunsch W74 | beratende Torstellen T1–T4, T6 |
+| erzwungene Tore | Hooks, die Aktionen blockieren oder eine Freigabe verlangen (S. 26–27, 40–41); Plan Mode, der vor dem Plan keine Änderung zulässt (S. 20) | Hooks gibt es nur von AIBOS selbst (Spec 02 *Hooks*); `contents.hooks` eines Pakets ist im Format vorgesehen, aber ohne Wirkung (Spec 06); Wunsch W74 | beratende Torstellen T1–T4, T6 |
 | Gleichlauf Plan und Code | Hook, der ihn erzwingt (S. 20) | keiner | `plan.md` im selben Commit nachführen |
 | Subagents | Helfer mit eigenem Kontext, z. B. ein Prüfer (S. 27–29) | kein Element; die Agentenfunktion des Hosts wird nicht verwendet (Spec 03 *Assistenten*); Wunsch W75 | selbst prüfen, in einem eigenen Schritt mit `sandra-pruefen` |
 | Schutz der Tests | Hook gegen Änderungen an Testdateien (S. 32–33) | keiner | Befunde nicht durch Ändern des Abnahmetests „beheben"; Änderungen an `spec.md` gehen über die Spec |
@@ -38,5 +38,5 @@ Deine Torstellen wirken nur, solange du dich an sie hältst. Wird eine übersteu
 
 ## Was keine Lücke ist
 
-- Eine Frage, die die Spec von AIOS offenlässt: Das ist ein offener Punkt der Spec; nenne ihn als offen und rate nicht.
+- Eine Frage, die die Spec von AIBOS offenlässt: Das ist ein offener Punkt der Spec; nenne ihn als offen und rate nicht.
 - Ein Werkzeug, das AIBOS anders löst, aber löst (z. B. Release-Kandidaten statt Pull Requests): Das ist eine andere Form, kein fehlender Baustein.

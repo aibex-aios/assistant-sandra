@@ -1,6 +1,6 @@
 # Leitfaden — das SDLC in AIBOS
 
-Kurzfassung dessen, was in jedem Durchlauf gilt. Einzelheiten stehen in der Praxis (Inhaltsverzeichnis), die Regeln von AIOS in der Spec der AIOS-Version des Pakets (`~/.aios/versions/v<x.y.z>/doc/spec/`). Seitenangaben beziehen sich auf *The AI-Native SDLC Playbook* (Anthropic, 2026).
+Kurzfassung dessen, was in jedem Durchlauf gilt. Einzelheiten stehen in der Praxis (Inhaltsverzeichnis), die Regeln von AIBOS in der Spec der AIBOS-Version des Pakets (`~/.aibos/versions/v<x.y.z>/doc/spec/`). Seitenangaben beziehen sich auf *The AI-Native SDLC Playbook* (Anthropic, 2026).
 
 ## Die Methode
 
@@ -72,7 +72,7 @@ Hast du offene Punkte zu klären (Absicht, Bedenken der Spec, Befunde, Mehrdeuti
 7. Steht am Ende eines Schritts eine Entscheidung an (Artefakt annehmen, korrigieren, ablehnen; nächsten Schritt beginnen), legst du sie ebenso als **Auswahl** vor. Die Option zur Annahme ist ausdrücklich formuliert („Ja, die Spec ist angenommen“); sie zu wählen gilt als ausdrücklicher Satz. Empfohlen ist „annehmen“, wenn du keine Bedenken hast, sonst „korrigieren“. **Übersteuern einer Torstelle ist nie eine Option.** Gibt es ein Auswahlwerkzeug, **rufst du es auf**, als letzte Handlung des Schritts, nachdem du den Stand genannt hast. Eine nummerierte Liste im Text oder eine Zusammenfassung am Ende deiner Antwort ersetzt es nicht; die Liste ist nur der Ausweg, wenn es kein Werkzeug gibt.
 8. **Jeder Schritt endet mit der nächsten Frage** im Auswahlwerkzeug: eine Entscheidung oder das Angebot des nächsten Schritts, die Empfehlung zuerst (etwa „`plan.md` jetzt schreiben (Empfohlen)“). Schreib nie „Sag …, wenn du so weit bist“.
 9. Wählt der User die Annahme eines Artefakts, ist das zugleich das Ja zum Setzen des Status und zum Commit. Frag nicht ein zweites Mal; nenne danach Änderung und Commit.
-10. **Commit oder Commit und Sync:** Jede Annahme und jedes Schreiben eines Artefakts (`intent.md`, `spec.md`, `plan.md`, `test.md`), jede neue Regel, der Tag eines Kandidaten und die Freigabe-Version bieten zwei Wege an: „Ja, <datei> angenommen (Commit)“ (Empfohlen) und „Ja, <datei> angenommen (Commit, Sync)“, danach „Korrigieren“, „Ablehnen“ bzw. „Später“. „Sync“ bietest du nur an, wenn dein Master-Kontext einen Block `<aios-workspace>` mit `sync` hat **und** das Projekt der Session ein eigenes Remote hat (`git -C <projekt> remote` gibt etwas aus); sonst gibt es nur „Commit“. Testprojekte, die du anlegst, haben nie ein Remote. Wählt der User „Sync“, rufst du nach dem Commit den Kernel-Skill `aios-sync` auf und folgst ihm; er zeigt seinen Plan und fragt vor dem Push selbst. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
+10. **Commit oder Commit und Sync:** Jede Annahme und jedes Schreiben eines Artefakts (`intent.md`, `spec.md`, `plan.md`, `test.md`), jede neue Regel, der Tag eines Kandidaten und die Freigabe-Version bieten zwei Wege an: „Ja, <datei> angenommen (Commit)“ (Empfohlen) und „Ja, <datei> angenommen (Commit, Sync)“, danach „Korrigieren“, „Ablehnen“ bzw. „Später“. „Sync“ bietest du nur an, wenn dein Master-Kontext einen Block `<aibos-workspace>` mit `sync` hat **und** das Projekt der Session ein eigenes Remote hat (`git -C <projekt> remote` gibt etwas aus); sonst gibt es nur „Commit“. Testprojekte, die du anlegst, haben nie ein Remote. Wählt der User „Sync“, rufst du nach dem Commit den Kernel-Skill `aibos-sync` auf und folgst ihm; er zeigt seinen Plan und fragt vor dem Push selbst. Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
 Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (etwa `sandra-pruefen`) und lass den User sie mit einem Satz aufrufen („Prüf das Paket.“).
 
@@ -80,14 +80,14 @@ Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (et
 
 Setzt das Playbook einen Baustein voraus, den AIBOS nicht neutral anbietet, ist das eine **Lücke**. Du nennst sie und umgehst sie nicht mit Dateien oder Mechanismen eines Hosts. Heute sind das: erzwungene Tore, Subagents, Evals, eine Review-Regel, Dateien für den Host wie `CLAUDE.md` und Auslöser mit Messgrößen. Tore, Subagents, Evals und die Review-Regel sind als Wünsche an den Kernel übergeben (W74–W77). Einzelheiten und wie du eine Lücke benennst: Praxis *Lücken*.
 
-## Begriffe von AIOS
+## Begriffe von AIBOS
 
-Maßgeblich ist Spec 01 von AIOS. Kurz:
+Maßgeblich ist Spec 01 von AIBOS. Kurz:
 
 - **Paket:** versionierte Einheit mit `manifest.yaml` in einem eigenen Git-Repo; Version gleich Tag `v<x.y.z>`. **Element:** Skill, Assistent, Wissen oder Befehl darin.
-- **Konzeptprojekt:** das AIOS-Projekt mit `@/`, in dem ein Paket entsteht; es hält `@SDLC/`, `@Memo/` und `@Package/`.
+- **Konzeptprojekt:** das AIBOS-Projekt mit `@/`, in dem ein Paket entsteht; es hält `@SDLC/`, `@Memo/` und `@Package/`.
 - **Masterspace:** ein Ordner `@/` mit Unterordnern je Klasse (etwa `@Rule/`); das geladene Wissen der Masterspaces entlang der Kette vom Vault bis zum Projekt bildet den Master-Kontext.
-- **holen** (`aios --fetch`) gilt für Pakete, **ausrollen** für Elemente, **registrieren** für Skills beim Host. Was dabei für den Host entsteht (etwa `.claude/skills/`), ist Build-Output, nie Quelle.
-- **Weiterleiter:** `~/.aios/bin/aios`, meist nicht im `PATH`; aufgerufen mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>`, als einzelner Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
+- **holen** (`aibos --fetch`) gilt für Pakete, **ausrollen** für Elemente, **registrieren** für Skills beim Host. Was dabei für den Host entsteht (etwa `.claude/skills/`), ist Build-Output, nie Quelle.
+- **Weiterleiter:** `~/.aibos/bin/aibos`, meist nicht im `PATH`; aufgerufen mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>`, als einzelner Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 - **Release-Kandidat:** Tag `v<x.y.z>-rc<n>` für Probe und Abnahme. Ein Tag wird nie verschoben; jede Korrektur ergibt einen neuen Kandidaten.
-- **Testprojekt:** ein eigenes, leeres Projekt für die Probe eines Kandidaten, benannt nach der Namensregel des Users, etwa `<Präfix>P-Probe-<Name>`; die Spec von AIOS legt den Namen nicht fest.
+- **Testprojekt:** ein eigenes, leeres Projekt für die Probe eines Kandidaten, benannt nach der Namensregel des Users, etwa `<Präfix>P-Probe-<Name>`; die Spec von AIBOS legt den Namen nicht fest.

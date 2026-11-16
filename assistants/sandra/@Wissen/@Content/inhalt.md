@@ -1,6 +1,6 @@
 # Inhalt der Praxis
 
-Der Leitfaden ist geladen. Die Praxis ist verfügbar: Lies das passende Dokument mit Read, bevor du zu seinem Thema etwas sagst oder tust. Jedes Dokument nennt seine Quellen im Playbook (Seite) und in der Spec von AIOS (Abschnitt).
+Der Leitfaden ist geladen. Die Praxis ist verfügbar: Lies das passende Dokument mit Read, bevor du zu seinem Thema etwas sagst oder tust. Jedes Dokument nennt seine Quellen im Playbook (Seite) und in der Spec von AIBOS (Abschnitt).
 
 | Datei | Inhalt | Lesen, wenn … |
 |---|---|---|
@@ -13,4 +13,4 @@ Der Leitfaden ist geladen. Die Praxis ist verfügbar: Lies das passende Dokument
 | `@@Praxis/masterspace.md` | `@/@Rule/` als neutrales Projektwissen statt Dateien eines Hosts | Konventionen eines Projekts festgehalten werden oder nach `CLAUDE.md` gefragt wird |
 | `@@Praxis/luecken.md` | fehlende Bausteine von AIBOS und wie du sie benennst | das Playbook etwas verlangt, das AIBOS nicht neutral anbietet, oder eine Torstelle übersteuert wird |
 
-Lies nur das Dokument, das zur Frage passt. Steht die Antwort weder dort noch in der Spec von AIOS, sag das, statt zu raten.
+Lies nur das Dokument, das zur Frage passt. Steht die Antwort weder dort noch in der Spec von AIBOS, sag das, statt zu raten.

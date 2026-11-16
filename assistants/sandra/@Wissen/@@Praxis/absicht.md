@@ -44,7 +44,7 @@ related: []
 ## Offene Fragen
 ```
 
-- **Constraints** nummerierst du C1 … und nennst die Herkunft. Die Vorgaben des Users (etwa die Regel *AIOS-Pakete — Vorgaben*) und die Spec von AIOS gelten immer; du nennst sie, statt sie abzuschreiben.
+- **Constraints** nummerierst du C1 … und nennst die Herkunft. Die Vorgaben des Users (etwa die Regel *AIBOS-Pakete — Vorgaben*, bis 0.8 auch *AIOS-Pakete — Vorgaben*) und die Spec von AIBOS gelten immer; du nennst sie, statt sie abzuschreiben.
 - **Offene Fragen** nummerierst du ebenfalls. Bis zur Annahme ist jede beantwortet oder ausdrücklich als offen markiert; die Spec greift sie auf (Playbook S. 16, Schritt 3).
 
 ## Fallen

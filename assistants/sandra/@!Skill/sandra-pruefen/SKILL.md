@@ -1,8 +1,8 @@
 ---
 name: sandra-pruefen
-version: 0.2.0
+version: 0.3.0
 description: >
-  Prüft das Paket-Repo eines AIBOS-Pakets gegen die Spec von AIOS und gegen spec.md des
+  Prüft das Paket-Repo eines AIBOS-Pakets gegen die Spec von AIBOS und gegen spec.md des
   Durchlaufs: Manifest, Namen, contents, Versionen, Frontmatter, Rückfragen in Skills,
   Neutralität gegenüber dem Host, Lizenz, Inhalt ohne Notizen. Schreibt den Prüfbericht
   test.md in den Durchlauf, nichts ins Paket. Verwenden bei "Paket prüfen", "prüf das Paket",
@@ -13,27 +13,27 @@ description: >
 
 Ein Skill der Assistentin Sandra. Er **liest** das Paket-Repo und schreibt nur `test.md` im Durchlauf. Korrekturen am Paket schlägt er vor; ausgeführt werden sie erst nach Ja und nach T3. Lies zuerst `@@Praxis/pruefen-und-probe.md`.
 
-**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
+**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung.
 
 ## 1. Was geprüft wird
 
 - **Durchlauf** und **Paket-Repo** wie bei `sandra-sdlc` bzw. aus `plan.md` (*Dateien, die sich ändern*). Nennt der User ein Repo, nimm dieses.
 - **Geprüfter Stand:** der aktuelle Commit, `git -C <repo> log -1 --format=%h`. Ist der Arbeitsbaum nicht committet (`git -C <repo> status --short`), ist das ein Befund; geprüft wird trotzdem, aber `test.md` kann dann nicht `ohne Befund` lauten.
 - **Maßstäbe**, in dieser Reihenfolge:
-  1. **AIOS:** die Spec der AIOS-Version aus `requires.aios` (`~/.aios/versions/v<x.y.z>/doc/spec/`), besonders 06 *`manifest.yaml`* und *Prüfung beim Holen*, 03 *Format eines Skills* und *Assistenten*. Kannst du sie nicht lesen, sag das und brich ab.
+  1. **AIBOS:** die Spec der AIBOS-Version aus `requires.aibos` (`~/.aibos/versions/v<x.y.z>/doc/spec/`), besonders 06 *`manifest.yaml`* und *Prüfung beim Holen*, 03 *Format eines Skills* und *Assistenten*. Kannst du sie nicht lesen, sag das und brich ab.
   2. **Paket:** `spec.md` des Durchlaufs.
 
 ## 2. Prüfliste
 
 | Block | Prüfe |
 |---|---|
-| Manifest | Pflichtfelder `name`, `version`, `type`, `description`, `requires.aios`; `type` bekannt; `description` ein Satz; `aios` nicht in `depends` |
-| Namen | Paket `<typ>-<name>` gleich dem Repo-Ordner; Elementnamen gleich Verzeichnis und `name` im Frontmatter; nicht `aios`, `aios-…`, `gui`, `none`, `inherit` |
+| Manifest | Pflichtfelder `name`, `version`, `type`, `description`, `requires.aibos`; `type` bekannt; `description` ein Satz; `aibos` nicht in `depends` |
+| Namen | Paket `<typ>-<name>` gleich dem Repo-Ordner; Elementnamen gleich Verzeichnis und `name` im Frontmatter; nicht `aibos`, `aibos-…`, `gui`, `none`, `inherit` |
 | `contents` | jeder Name als Ordner vorhanden; jeder Ordner in `skills/`, `assistants/`, `commands/` genannt; keine doppelten Elementnamen; `gui` in `skills` |
 | Versionen | gültiges SemVer in Manifest und jedem Frontmatter; Elemente in `skills/` und `assistants/` mit der Paketversion (ohne `-rc<n>`); letzter Tag (`git -C <repo> tag`) kleiner als die Version im Manifest |
 | Assistent | `name`, `title`, `version`, `description`; jeder Name in `skills` auflösbar; Rollentext mit Personalität, Handwerk, Grenzen; Wissen mit Klassen und Inhaltsverzeichnis |
-| Skills | `name`, `version`, `description` (höchstens 1024 Zeichen); jeder schreibende Skill mit Plan → Rückfrage → Ausführen; jeder Skill, der `aios` aufruft, mit dem Satz zum Weiterleiter |
-| Abhängigkeiten | nur wenn `depends` gesetzt: jedes Paket im Hub vorhanden (`aios --library <paket>`, nur lesend), Bereich mit `~=` |
+| Skills | `name`, `version`, `description` (höchstens 1024 Zeichen); jeder schreibende Skill mit Plan → Rückfrage → Ausführen; jeder Skill, der `aibos` aufruft, mit dem Satz zum Weiterleiter |
+| Abhängigkeiten | nur wenn `depends` gesetzt: jedes Paket im Hub vorhanden (`aibos --library <paket>`, nur lesend), Bereich mit `~=` |
 | Neutralität | `grep -rn` im Repo nach `.claude` und `CLAUDE.md`: Treffer nur, wo eine Lücke beschrieben wird; keine Datei und kein Ordner eines Hosts |
 | Lizenz | nach den Vorgaben des Users; bei Apache-2.0 `LICENSE` und `NOTICE` vorhanden |
 | Inhalt | keine Memos, Notizen, Testdaten, `.DS_Store`, Geheimnisse; `README.md` vorhanden |

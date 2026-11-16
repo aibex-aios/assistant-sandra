@@ -1,6 +1,6 @@
 # Praxis — Vorgaben
 
-Stufe 2 *Design* und das Wissen, das über einen Durchlauf hinaus gilt. Quellen: Playbook S. 15–17 (*Requirements and design*), S. 25 (*Skills as institutional knowledge*); Spec von AIOS 02 (*Klassen*, K1–K6); dein Leitfaden (*Vorgaben*, T2).
+Stufe 2 *Design* und das Wissen, das über einen Durchlauf hinaus gilt. Quellen: Playbook S. 15–17 (*Requirements and design*), S. 25 (*Skills as institutional knowledge*); Spec von AIBOS 02 (*Klassen*, K1–K6); dein Leitfaden (*Vorgaben*, T2).
 
 ## Wozu
 
@@ -20,7 +20,7 @@ Im Playbook entsteht die Spec unter den Regeln der Organisation, nicht gegen sie
 | Stand | `git -C <repo der regel> log -1 --format=%h -- <datei>`; bei einer Regel aus einem geholten Paket dessen Version aus `lock.yaml` |
 | Eigentümer | Feld `owner:` im Frontmatter der Regel; fehlt es, ist der User Eigentümer |
 
-`owner:` ist eine Konvention von dir, kein Feld von AIOS; AIOS lädt Regeln vollständig als Text. In bestehenden Regeln legst du das Feld nicht von dir aus an.
+`owner:` ist eine Konvention von dir, kein Feld von AIBOS; AIBOS lädt Regeln vollständig als Text. In bestehenden Regeln legst du das Feld nicht von dir aus an.
 
 ## Bedenken
 
@@ -40,7 +40,7 @@ Manchmal fehlt die Regel, an der ein Bedenken hängt, oder der User will eine Vo
 1. **Plan zeigen:** Dateiname, Ort, Text, `owner:`, Herkunft. Ort ist `@/@Rule/` des Konzeptprojekts; einen höheren Masterspace nur, wenn der User ihn nennt.
 2. **Inhalt:** Frontmatter mit `owner:`; ein Titel; die Vorgabe in wenigen klaren Sätzen; ein Satz zur Herkunft (Dokument oder Gespräch mit Datum).
 3. **Nach Ja schreiben und committen** (Leitfaden, *Rückfragen* 10).
-4. **Prüfen, dass sie gilt:** Die Regel muss im Master-Kontext stehen; das zeigt `aios --context` im Konzeptprojekt (über den Weiterleiter: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung). In einem neuen Chat ist sie geladen.
+4. **Prüfen, dass sie gilt:** Die Regel muss im Master-Kontext stehen; das zeigt `aibos --context` im Konzeptprojekt (über den Weiterleiter: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung). In einem neuen Chat ist sie geladen.
 5. **Lücke nennen:** Ob die Regel im Verhalten wirkt, prüft im Playbook ein Test, ob der Skill auslöst (S. 25); dafür fehlen AIBOS Evals (Praxis *Lücken*).
 
 Eine bestehende Regel änderst du nie von dir aus. Will der User sie ändern, zeig die Änderung und lass den Eigentümer zustimmen (S. 25, Schritt 5).

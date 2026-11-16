@@ -1,10 +1,10 @@
 # Praxis — Masterspace statt Dateien eines Hosts
 
-Quellen: Playbook S. 22–23; Spec von AIOS 01 (*Begriffe*: Masterspace, Build-Output), 02 (*Klassen*, *Inhaltsverzeichnis des verfügbaren Wissens*).
+Quellen: Playbook S. 22–23; Spec von AIBOS 01 (*Begriffe*: Masterspace, Build-Output), 02 (*Klassen*, *Inhaltsverzeichnis des verfügbaren Wissens*).
 
 ## Wozu
 
-Das Playbook gibt der KI ihr Projektwissen über eine Datei des Hosts: `CLAUDE.md` an der Wurzel des Repos, mit Konventionen, Befehlen, Aufbau und den Fehlern, die sich wiederholen; sie wird zu Beginn jeder Sitzung gelesen (S. 23). In AIBOS übernimmt diese Aufgabe der **Masterspace** `@/` eines Projekts. Er ist neutral gegenüber dem Host: AIOS lädt ihn als Master-Kontext, gleich welcher Host darunter läuft.
+Das Playbook gibt der KI ihr Projektwissen über eine Datei des Hosts: `CLAUDE.md` an der Wurzel des Repos, mit Konventionen, Befehlen, Aufbau und den Fehlern, die sich wiederholen; sie wird zu Beginn jeder Sitzung gelesen (S. 23). In AIBOS übernimmt diese Aufgabe der **Masterspace** `@/` eines Projekts. Er ist neutral gegenüber dem Host: AIBOS lädt ihn als Master-Kontext, gleich welcher Host darunter läuft.
 
 ## Was wohin gehört
 
@@ -30,7 +30,7 @@ Das Playbook empfiehlt außerdem, einen Fehler, den die KI zweimal macht, als Ko
 ## Was du nicht tust
 
 - Du legst kein `CLAUDE.md`, kein `AGENTS.md` und keinen Ordner wie `.claude/` an, auch nicht „zusätzlich".
-- Was AIOS beim Registrieren für den Host erzeugt (etwa `.claude/skills/`), ist Build-Output: nie Quelle, jederzeit neu erzeugbar (Spec 01). Du änderst es nicht von Hand.
+- Was AIBOS beim Registrieren für den Host erzeugt (etwa `.claude/skills/`), ist Build-Output: nie Quelle, jederzeit neu erzeugbar (Spec 01). Du änderst es nicht von Hand.
 - Fragt der User nach `CLAUDE.md`, erklärst du, dass der Masterspace diese Rolle übernimmt, und zeigst, wo die gewünschte Regel hingehört. Dateien für bestimmte Hosts aus dem Masterspace zu erzeugen, wäre ein Baustein des Kernels, den es heute nicht gibt (Praxis *Lücken*).
 
 ## Fallen

@@ -1,6 +1,6 @@
 ---
 name: sandra-sdlc
-version: 0.2.0
+version: 0.3.0
 description: >
   Führt einen Durchlauf des SDLC für ein AIBOS-Paket in @SDLC/: Durchlauf anlegen oder
   fortsetzen, intent.md mit dem User erarbeiten, spec.md nach der angenommenen Absicht (T1)
@@ -65,7 +65,7 @@ Lies zuerst `@@Praxis/spezifikation.md`.
 
 Dann:
 
-1. Absicht und die Spec der AIOS-Version aus `requires.aios` lesen; dazu `@@Praxis/vorgaben.md`.
+1. Absicht und die Spec der AIBOS-Version aus `requires.aibos` lesen; dazu `@@Praxis/vorgaben.md`.
 2. **Vorgaben sammeln:** jede geladene Regel deines Master-Kontexts, die das Paket betrifft, mit Pfad, Stand (`git -C <repo> log -1 --format=%h -- <datei>`, bei Paketwissen die Version aus `lock.yaml`) und Eigentümer (`owner:`, sonst der User).
 3. `spec.md` nach der Vorlage der Praxis formulieren, mit *Angewandte Vorgaben*, *Bedenken* (Entscheidung leer) und Abnahmetest, `status: Entwurf`, `related` mit `intent.md`; zeigen, nach Ja schreiben und committen.
 4. Mit dem User gegen die Absicht prüfen; **die Bedenken zuerst**, Frage für Frage nach dem Leitfaden, *Rückfragen*. Jede Entscheidung des Eigentümers trägst du ein; ändert sie den Inhalt, gilt der Rückfall (Schritt 6).
@@ -86,7 +86,7 @@ Dann: `plan.md` mit den vier Teilen (Dateien, die sich ändern; Reihenfolge der 
 
 - `Angenommen` oder `Abgelehnt` setzt du **nur auf einen ausdrücklichen Satz** des Users zu genau diesem Artefakt („die Spec ist angenommen", „nimm den Plan an"). Eine Zustimmung zu einer Einzelheit genügt nicht; frag dann nach.
 - Die Annahme legst du am Ende des Schritts als **Auswahl** vor, mit dem Auswahlwerkzeug, wenn es eines gibt, nicht als Liste im Text (Leitfaden, *Rückfragen*, Punkt 7): zuerst die Empfehlung „Ja, `<datei>` angenommen (Commit)“, dann „Ja, `<datei>` angenommen (Commit, Sync)“ (nur unter der Bedingung von Punkt 10: Workspace mit `sync` und eigenes Remote des Projekts), „Korrigieren“, „Ablehnen“, zuletzt die eigene Antwort. Ebenso beim Schreiben eines Entwurfs: „Schreiben (Commit)“, „Schreiben (Commit, Sync)“, „Korrigieren“. Die Annahme zu wählen gilt als ausdrücklicher Satz und zugleich als Ja zum Setzen des Status und zum Commit; frag nicht ein zweites Mal (Punkt 9). Übersteuern ist nie eine Option.
-- Setz `status` (und `date`), committe „SDLC NN: <datei> angenommen" und nenne Änderung und Commit. Bei „Sync": danach den Kernel-Skill `aios-sync` aufrufen und ihm folgen. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung. Kam die Annahme als Satz statt aus der Auswahl, gilt der Satz ebenso.
+- Setz `status` (und `date`), committe „SDLC NN: <datei> angenommen" und nenne Änderung und Commit. Bei „Sync": danach den Kernel-Skill `aibos-sync` aufrufen und ihm folgen. Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung. Kam die Annahme als Satz statt aus der Auswahl, gilt der Satz ebenso.
 - **Rückfall (R4):** Ändert sich ein angenommenes Artefakt inhaltlich, setzt du es im selben Commit auf `Entwurf` zurück und sagst, welche Torstelle dadurch wieder offen ist (T1 für die Spec, T2 für den Plan, T3 für das Paket-Repo). Rein redaktionelle Korrekturen (Tippfehler) lassen den Status; nenne sie als solche.
 
 ## 7. Übersteuern
@@ -122,5 +122,5 @@ Steht danach eine Entscheidung an (annehmen, korrigieren, nächster Schritt), ru
 
 - Nur AIBOS-Pakete. Bittet der User um andere Software, sag, dass du dafür nicht gemacht bist.
 - Keine Datei eines Hosts; fehlt ein Baustein, den das Playbook voraussetzt, benenne ihn nach `@@Praxis/luecken.md`.
-- Nichts nach außen: kein Push, kein Remote, kein Tag; Ausnahme ist `aios-sync` nach Wahl „Sync“ (Punkt 10 des Leitfadens).
+- Nichts nach außen: kein Push, kein Remote, kein Tag; Ausnahme ist `aibos-sync` nach Wahl „Sync“ (Punkt 10 des Leitfadens).
 - Keine bestehende Regel ändern, keine Entscheidung eines Bedenkens selbst eintragen.

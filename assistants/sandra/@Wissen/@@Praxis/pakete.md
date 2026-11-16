@@ -1,8 +1,8 @@
 # Praxis — Pakete
 
-Stufe 3 *Build*, zweiter Teil: das Paket-Repo. Quellen: Spec von AIOS 06 (*Pakete*, *Aufbau eines Paket-Repos*, *`manifest.yaml`*, *Versionen und Bereiche*), 03 (*Format eines Skills*, *Versionen*, *Assistenten*), 02 (*Klassen*); Regel *AIOS-Pakete — Vorgaben* des Users, falls geladen.
+Stufe 3 *Build*, zweiter Teil: das Paket-Repo. Quellen: Spec von AIBOS 06 (*Pakete*, *Aufbau eines Paket-Repos*, *`manifest.yaml`*, *Versionen und Bereiche*), 03 (*Format eines Skills*, *Versionen*, *Assistenten*), 02 (*Klassen*); Regel *AIBOS-Pakete — Vorgaben* des Users, falls geladen.
 
-Maßstab ist immer die Spec der AIOS-Version aus `requires.aios` des Pakets (`~/.aios/versions/v<x.y.z>/doc/spec/`). Was hier steht, ist eine Kurzfassung für v0.6; im Zweifel liest du dort nach.
+Maßstab ist immer die Spec der AIBOS-Version aus `requires.aibos` des Pakets (`~/.aibos/versions/v<x.y.z>/doc/spec/`). Was hier steht, ist eine Kurzfassung für v0.7; im Zweifel liest du dort nach.
 
 ## Vor dem Anlegen
 
@@ -13,7 +13,7 @@ Maßstab ist immer die Spec der AIOS-Version aus `requires.aios` des Pakets (`~/
 
 | Was | Regel |
 |---|---|
-| Paket | `<typ>-<name>`, etwa `skill-wortzahl`, `assistant-sandra`; Kleinbuchstaben, Ziffern, Bindestriche, höchstens 64 Zeichen; nie `aios`, `aios-…`, `gui`, `none`, `inherit`. AIOS wertet nur `type` aus; das Schema ist Konvention der AIbex-Pakete (Spec 06 *Pakete*) |
+| Paket | `<typ>-<name>`, etwa `skill-wortzahl`, `assistant-sandra`; Kleinbuchstaben, Ziffern, Bindestriche, höchstens 64 Zeichen; nie `aibos`, `aibos-…`, `gui`, `none`, `inherit`. AIBOS wertet nur `type` aus; das Schema ist Konvention der AIbex-Pakete (Spec 06 *Pakete*) |
 | Element | `<name>` gleich dem Verzeichnisnamen und dem Feld `name` im Frontmatter |
 | Assistent | zusätzlich `title` als Anzeigename |
 
@@ -46,13 +46,13 @@ version: 0.1.0
 type: skill
 description: Zählt die Wörter einer Datei im Projekt
 requires:
-  aios: ">=0.6,<0.7"
+  aibos: ">=0.7,<0.8"
 contents:
   skills: [wortzahl]
 license: Apache-2.0
 ```
 
-Pflicht: `name` (gleich dem Repo im Hub), `version`, `type`, `description` (ein Satz), `requires.aios`. Optional: `depends` (nie `aios`), `contents`, `license`. Jeder Name in `contents` muss als Ordner vorhanden sein; sonst wird das Paket beim Holen abgelehnt (Spec 06 *Prüfung beim Holen*).
+Pflicht: `name` (gleich dem Repo im Hub), `version`, `type`, `description` (ein Satz), `requires.aibos`. Optional: `depends` (nie `aibos`), `contents`, `license`. Jeder Name in `contents` muss als Ordner vorhanden sein; sonst wird das Paket beim Holen abgelehnt (Spec 06 *Prüfung beim Holen*).
 
 ## Versionen
 
@@ -77,8 +77,8 @@ Nimm ein veröffentlichtes Paket desselben Typs im getaggten Stand als Vorlage, 
 3. Lokaler Commit „<paket> 0.1.0: angelegt aus <vorlage>". **Kein Tag**; getaggt wird erst der Release-Kandidat (T4).
 4. Stand nennen und `plan.md` abhaken bzw. nachführen.
 
-## Skills, die schreiben oder `aios` aufrufen
+## Skills, die schreiben oder `aibos` aufrufen
 
 - Jeder schreibende Skill zeigt erst den Plan, fragt und führt dann aus; der bloße Wunsch des Users ist keine Bestätigung des Plans.
-- Ein Skill, der `aios` aufruft, sagt: „Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung." Nur so lässt der Hook den Aufruf zu (Spec 02 *Freigabe*).
-- Kein Skill legt Dateien eines Hosts an. Was AIOS beim Registrieren für den Host erzeugt, ist Build-Output.
+- Ein Skill, der `aibos` aufruft, sagt: „Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung." Nur so lässt der Hook den Aufruf zu (Spec 02 *Freigabe*).
+- Kein Skill legt Dateien eines Hosts an. Was AIBOS beim Registrieren für den Host erzeugt, ist Build-Output.

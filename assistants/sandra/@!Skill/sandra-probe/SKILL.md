@@ -1,10 +1,10 @@
 ---
 name: sandra-probe
-version: 0.2.0
+version: 0.3.0
 description: >
   Bereitet die Probe eines geprüften AIBOS-Pakets vor (Torstelle T4): Release-Kandidat
-  v<x.y.z>-rc<n> lokal taggen, Testprojekt mit aios --init anlegen, den Kandidaten mit
-  aios --fetch --from --to hineinholen, Anleitung für den neuen Chat; nach der Probe die
+  v<x.y.z>-rc<n> lokal taggen, Testprojekt mit aibos --init anlegen, den Kandidaten mit
+  aibos --fetch --from --to hineinholen, Anleitung für den neuen Chat; nach der Probe die
   Abnahme annehmen lassen, die Freigabe-Version lokal schreiben (Torstelle T6) und das
   Testprojekt in den Papierkorb anbieten. Nichts geht nach außen. Verwenden bei "Probe",
   "Release-Kandidat", "rc taggen", "ausprobieren", "Abnahme", "Freigabe-Version".
@@ -14,7 +14,7 @@ description: >
 
 Ein Skill der Assistentin Sandra. Er taggt **lokal**, legt ein Testprojekt an, holt den Kandidaten hinein und schreibt nach der Abnahme die Freigabe-Version; nichts geht nach außen (kein Push, kein Tag am Remote, kein Hub). Lies zuerst `@@Praxis/pruefen-und-probe.md`.
 
-**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aios` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aios-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung. Jeder schreibende Befehl von `aios` läuft zuerst mit `--plan`; du zeigst den Plan, fragst und rufst erst nach Ja mit `--yes` auf.
+**Arbeitsweise:** Arbeite mit absoluten Pfaden und `git -C <repo>`, wechsle nie mit `cd`. Rufe `aibos` über den Weiterleiter auf: mit dem absoluten Pfad aus dem Block `<aibos-kernel-skills>` deines Master-Kontexts, als einzelnen Befehl ohne `cd`, `;`, `&&`, `|` oder Umleitung. Jeder schreibende Befehl von `aibos` läuft zuerst mit `--plan`; du zeigst den Plan, fragst und rufst erst nach Ja mit `--yes` auf.
 
 ## 1. Lage
 
@@ -38,10 +38,10 @@ Zeig alle Schritte auf einmal, frag mit der Auswahl „Ausführen (Commit)“ (E
 |---|---|---|
 | 1 | Manifest auf den Kandidaten setzen: `version: <x.y.z>-rc<n>` (die Elemente behalten `<x.y.z>`), Commit „<paket> <x.y.z>-rc<n>" | Datei ändern, `git -C <repo> commit` |
 | 2 | lokaler Tag | `git -C <repo> tag v<x.y.z>-rc<n>` |
-| 3 | Testprojekt anlegen (falls es fehlt) | `aios --init "<testprojekt>" --plan`, nach Ja `--yes` |
-| 4 | Kandidaten holen | `aios --fetch "<paket>==<x.y.z>-rc<n>" --from "<repo>" --to "<testprojekt>" --plan`, nach Ja `--yes` |
+| 3 | Testprojekt anlegen (falls es fehlt) | `aibos --init "<testprojekt>" --plan`, nach Ja `--yes` |
+| 4 | Kandidaten holen | `aibos --fetch "<paket>==<x.y.z>-rc<n>" --from "<repo>" --to "<testprojekt>" --plan`, nach Ja `--yes` |
 
-- **Testprojekt:** ein Unterprojekt des Konzeptprojekts, Name nach der Namensregel (Präfix des Konzeptprojekts plus `P`) und der Konvention `<Präfix>P-Probe-<Name>`, z. B. `MASPP-Probe-Wortzahl` unter `MASP-Probe-Sandra`. Zeigt `aios --init --plan` einen Verstoß gegen die Namensregel, nenne ihn und den Vorschlag und frag.
+- **Testprojekt:** ein Unterprojekt des Konzeptprojekts, Name nach der Namensregel (Präfix des Konzeptprojekts plus `P`) und der Konvention `<Präfix>P-Probe-<Name>`, z. B. `MASPP-Probe-Wortzahl` unter `MASP-Probe-Sandra`. Zeigt `aibos --init --plan` einen Verstoß gegen die Namensregel, nenne ihn und den Vorschlag und frag.
 - Ein Tag wird nie verschoben. Stimmt ein vorhandener Kandidat nicht, ist ein neuer `-rc<n+1>` fällig.
 - Schritt 1 ist eine Änderung im Paket-Repo: T3 gilt (`plan.md` angenommen). Sie ändert nur `version` im Manifest; T4 bezieht sich auf den geprüften Commit unmittelbar davor. Jede andere Änderung braucht eine neue Prüfung.
 
@@ -60,7 +60,7 @@ Schlägt ein Schritt fehl, halt an, nenne den Stand und frag. Was schon getaggt 
 Gib dem User eine kurze Anleitung:
 
 1. Einen **neuen Chat** im Testprojekt öffnen (Pfad nennen); erst dort sind die geholten Skills registriert.
-2. Einen Skill als ganzen Prompt aufrufen: `/<skill> …`; einen Assistenten im Testprojekt selbst zuordnen: `/aios-assistant <name>`.
+2. Einen Skill als ganzen Prompt aufrufen: `/<skill> …`; einen Assistenten im Testprojekt selbst zuordnen: `/aibos-assistant <name>`.
 3. Die Schritte des Abnahmetests aus `spec.md` der Reihe nach durchgehen; Abweichungen zurückmelden.
 
 ## 6. Abnahme
