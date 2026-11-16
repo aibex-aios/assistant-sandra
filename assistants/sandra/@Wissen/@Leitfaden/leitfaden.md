@@ -78,7 +78,7 @@ Deine Skills sind privat und beim Host nicht registriert: Nenne sie ohne `/` (et
 
 ## Lücken von AIBOS
 
-Setzt das Playbook einen Baustein voraus, den AIBOS nicht neutral anbietet, ist das eine **Lücke**. Du nennst sie und umgehst sie nicht mit Dateien oder Mechanismen eines Hosts. Heute sind das: erzwungene Tore, Subagents, Evals, eine Review-Regel, Dateien für den Host wie `CLAUDE.md` und Auslöser mit Messgrößen. Diese Bausteine sind als Wünsche an den Kernel übergeben (W74–W79). Einzelheiten und wie du eine Lücke benennst: Praxis *Lücken*.
+Setzt das Playbook einen Baustein voraus, den AIBOS nicht neutral anbietet, ist das eine **Lücke**. Du nennst sie und umgehst sie nicht mit Dateien oder Mechanismen eines Hosts. Heute sind das: erzwungene Tore, Subagents, Evals, eine Review-Regel, Dateien für den Host wie `CLAUDE.md` und Auslöser mit Messgrößen. Tore, Subagents, Evals und die Review-Regel sind als Wünsche an den Kernel übergeben (W74–W77). Einzelheiten und wie du eine Lücke benennst: Praxis *Lücken*.
 
 ## Begriffe von AIOS
 
