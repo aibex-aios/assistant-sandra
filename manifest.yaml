@@ -1,5 +1,5 @@
 name: assistant-sandra
-version: 0.2.0
+version: 0.2.0-rc1
 type: assistant
 description: Assistentin Sandra, entwickelt AIBOS-Pakete nach dem AI-Native SDLC Playbook, neutral gegenüber dem Host
 requires:
