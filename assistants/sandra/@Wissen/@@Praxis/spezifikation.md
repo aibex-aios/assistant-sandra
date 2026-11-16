@@ -1,6 +1,6 @@
 # Praxis — Spezifikation (`spec.md`)
 
-Stufe 2 *Design*. Quellen: Playbook S. 15–17; Spec von AIOS 03 (Skills und Assistenten), 06 (Pakete); dein Leitfaden (*Torstellen*, T1).
+Stufe 2 *Design*. Quellen: Playbook S. 15–17; Praxis *Vorgaben*; Spec von AIOS 03 (Skills und Assistenten), 06 (Pakete); dein Leitfaden (*Torstellen*, T1).
 
 ## Wozu
 
@@ -9,7 +9,8 @@ Die Spec übersetzt die angenommene Absicht in etwas, nach dem gebaut werden kan
 ## Vor dem Schreiben
 
 - **T1:** `intent.md` hat `status: Angenommen`. Sonst schreibst du nicht und sagst, was fehlt.
-- Lies die Absicht ganz, dazu die Vorgaben des Users und die Spec der AIOS-Version aus `requires.aios`. Sie sind die Vorgaben, an die sich die Spec halten muss; im Playbook übernehmen diese Rolle die Skills der Organisation (S. 15, 17).
+- Lies die Absicht ganz und die Spec der AIOS-Version aus `requires.aios`.
+- Sammle die **Vorgaben**: die geladenen Regeln deines Master-Kontexts, die das Paket betreffen, mit Stand und Eigentümer (Praxis *Vorgaben*). Im Playbook übernehmen diese Rolle die Skills der Organisation (S. 15, 17).
 
 ## Inhalt
 
@@ -20,7 +21,8 @@ Die Spec übersetzt die angenommene Absicht in etwas, nach dem gebaut werden kan
 | Elemente | Paketname nach dem Namensschema, Typ, Manifest in Kürze, je Element Name und Aufgabe (Skills, Assistent, Wissen, Befehle) |
 | Verhalten | was jedes Element tut, Schritt für Schritt aus Sicht des Users; wo es schreibt; wo es fragt |
 | Grenzen | was das Paket ausdrücklich nicht tut |
-| Bedenken | Punkte, an denen Absicht und Vorgaben sich reiben oder du unsicher bist, deutlich markiert (S. 15–16) |
+| Angewandte Vorgaben | Tabelle: Regel (Pfad), Stand, Eigentümer (Praxis *Vorgaben*) |
+| Bedenken | Tabelle: Nummer, Bedenken, Vorgabe (Pfad), Eigentümer, Entscheidung; leere Entscheidung = offen (S. 15–16) |
 | Abnahmetest | nummerierte Schritte mit erwartetem Ergebnis (unten) |
 
 Halte die Spec knapp. Was in der Absicht steht, wiederholst du nicht, sondern verweist darauf.
@@ -41,9 +43,18 @@ Gehe mit dem User die Spec gegen die Absicht durch (S. 16, Schritte 3–4):
 
 1. Löst die Spec das Problem aus `intent.md`?
 2. Ist jede offene Frage der Absicht beantwortet oder bewusst weitergetragen?
-3. Die markierten Bedenken zuerst klären, Frage für Frage (Leitfaden, *Rückfragen*); jedes bekommt eine Entscheidung.
+3. Die markierten Bedenken zuerst klären, Frage für Frage (Leitfaden, *Rückfragen*); jedes bekommt eine Entscheidung des Eigentümers. Solange eines offen ist, bleibt T2 zu, auch wenn die Spec angenommen ist.
 
-Danach committest du `spec.md` neben `intent.md`; das Paar zeigt, was gewünscht und was entschieden wurde (S. 16, Schritt 5; S. 17). Auf einen ausdrücklichen Satz setzt du `status: Angenommen`; erst das öffnet T2 und damit den Implementierungsplan (S. 16, Schritt 6).
+Den Prompt hältst du nicht gesondert fest: Der Auftrag steht in `intent.md`, dein Ablauf in deinem Skill, dessen Version mit deinem Paket feststeht. Danach committest du `spec.md` neben `intent.md`; das Paar zeigt, was gewünscht und was entschieden wurde (S. 16, Schritt 5; S. 17). Auf einen ausdrücklichen Satz setzt du `status: Angenommen`; erst das öffnet T2 und damit den Implementierungsplan (S. 16, Schritt 6).
+
+## Indikatoren
+
+Das Playbook misst diesen Play mit zwei Werten aus Git (S. 17). Du nennst sie im Stand, sobald es die Commits gibt:
+
+| Indikator | aus `git log` des Durchlaufs |
+|---|---|
+| früh | Zeit vom ersten Commit von `intent.md` zum ersten Commit von `spec.md`; sag dazu „Kalenderzeit, mit Pausen" |
+| spät | Zahl der Commits an `spec.md` nach dem ersten Commit von `plan.md` |
 
 ## Fallen
 

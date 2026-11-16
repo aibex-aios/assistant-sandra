@@ -21,7 +21,7 @@ Du liest nur und schreibst nichts ins Paket. Das Ergebnis kommt nach `test.md` i
 | Neutralität | keine Datei und kein Mechanismus eines Hosts im Paket (Suche nach `.claude`, `CLAUDE.md`); Fundstellen nur dort, wo eine Lücke beschrieben wird |
 | Lizenz | nach den Vorgaben; bei Apache-2.0 `LICENSE` und `NOTICE` |
 | Inhalt | keine Memos, Notizen, Testdaten, `.DS_Store`, Geheimnisse; `README.md`; Arbeitsbaum committet |
-| Paket-Spec | Elemente, Verhalten und Grenzen wie in `spec.md`; Abnahmetest vorhanden |
+| Paket-Spec | Elemente, Verhalten und Grenzen wie in `spec.md`, auch die Entscheidungen zu den Bedenken; Abnahmetest vorhanden |
 
 **`test.md`:**
 
@@ -30,7 +30,9 @@ Du liest nur und schreibst nichts ins Paket. Das Ergebnis kommt nach `test.md` i
 title: "Prüfbericht — <paket> <x.y.z>"
 date: JJJJ-MM-TT
 package: <paket> <x.y.z>
+commit: <sha>
 result: ohne Befund
+status: Entwurf
 ---
 
 Geprüfter Stand: Commit <sha> im Paket-Repo
@@ -42,7 +44,7 @@ Geprüfter Stand: Commit <sha> im Paket-Repo
 ## Ergebnis
 ```
 
-Befunde nummerierst du B1 … (vorher im Durchlauf nach der höchsten Nummer suchen), jeden mit Vorschlag. Behoben wird erst nach Ja und nach T3; danach prüfst du neu und schreibst `test.md` für den neuen Commit fort. `result: ohne Befund` gilt nur für den Commit, der darin steht.
+Befunde nummerierst du B1 … (vorher im Durchlauf nach der höchsten Nummer suchen), jeden mit Vorschlag. Behoben wird erst nach Ja und nach T3; danach prüfst du neu und schreibst `test.md` für den neuen Commit fort. `result: ohne Befund` gilt nur für den Commit, der in `commit` steht. Jede neue Prüfung schreibt `status: Entwurf`.
 
 ## Release-Kandidat (`sandra-probe`, T4)
 
@@ -59,6 +61,19 @@ Befunde nummerierst du B1 … (vorher im Durchlauf nach der höchsten Nummer suc
 4. **Abnahmetest:** Die Schritte aus `spec.md` der Reihe nach; du hältst den Stand je Schritt fest. Abweichungen sind Befunde und führen zu einem neuen Kandidaten.
 
 Jeder Aufruf von `aios` geht über den Weiterleiter (Praxis *Pakete*).
+
+## Abnahme und Freigabe-Version (`sandra-probe`, T6)
+
+- **Abnahme:** Nach der Probe legst du die Annahme von `test.md` als Auswahl vor („Ja, die Abnahme ist angenommen"). Sie setzt `result: ohne Befund` voraus. Wählt der User sie, setzt du `status: Angenommen` und committest.
+- **T6:** `test.md` hat `status: Angenommen`, und `commit` ist der Commit, auf den der Tag des Kandidaten zeigt (`git -C <repo> rev-list -n 1 v<x.y.z>-rc<n>`). Sonst keine Freigabe-Version.
+- **Freigabe-Version:** ein eigener Commit setzt `version: <x.y.z>` im Manifest, dann der lokale Tag `v<x.y.z>`. Kein Push; Veröffentlichen ist Sache des Users.
+
+## Testprojekt in den Papierkorb
+
+Nach der Freigabe-Version brauchst du das Testprojekt des Pakets nicht mehr. Biete an, es wegzuräumen, bevor jemand synchronisiert:
+
+1. Plan zeigen: Ziel `~/.Trash/<Name> <Datum>`, dazu die Zeile `/<Name>/` aus der `.gitignore` des übergeordneten Projekts entfernen.
+2. Nach Ja verschieben und die `.gitignore` committen. Nennen, wo es liegt.
 
 ## Was das Playbook mehr verlangt
 

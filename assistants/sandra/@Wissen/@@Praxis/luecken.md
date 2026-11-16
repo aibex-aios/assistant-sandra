@@ -10,14 +10,18 @@ Das Playbook beschreibt seine Methode mit den Werkzeugen eines bestimmten Hosts.
 
 | Baustein | im Playbook | in AIBOS v0.6 | was du stattdessen tust |
 |---|---|---|---|
-| erzwungene Tore | Hooks, die Aktionen blockieren oder eine Freigabe verlangen (S. 26–27, 40–41); Plan Mode, der vor dem Plan keine Änderung zulässt (S. 20) | Hooks gibt es nur von AIOS selbst (Spec 02 *Hooks*); `contents.hooks` eines Pakets ist im Format vorgesehen, aber ohne Wirkung (Spec 06) | beratende Torstellen T1–T4 |
+| erzwungene Tore | Hooks, die Aktionen blockieren oder eine Freigabe verlangen (S. 26–27, 40–41); Plan Mode, der vor dem Plan keine Änderung zulässt (S. 20) | Hooks gibt es nur von AIOS selbst (Spec 02 *Hooks*); `contents.hooks` eines Pakets ist im Format vorgesehen, aber ohne Wirkung (Spec 06); Wunsch W74 | beratende Torstellen T1–T4, T6 |
 | Gleichlauf Plan und Code | Hook, der ihn erzwingt (S. 20) | keiner | `plan.md` im selben Commit nachführen |
-| Subagents | Helfer mit eigenem Kontext, z. B. ein Prüfer (S. 27–29) | kein Element; die Agentenfunktion des Hosts wird nicht verwendet (Spec 03 *Assistenten*) | selbst prüfen, in einem eigenen Schritt mit `sandra-pruefen` |
+| Subagents | Helfer mit eigenem Kontext, z. B. ein Prüfer (S. 27–29) | kein Element; die Agentenfunktion des Hosts wird nicht verwendet (Spec 03 *Assistenten*); Wunsch W75 | selbst prüfen, in einem eigenen Schritt mit `sandra-pruefen` |
 | Schutz der Tests | Hook gegen Änderungen an Testdateien (S. 32–33) | keiner | Befunde nicht durch Ändern des Abnahmetests „beheben"; Änderungen an `spec.md` gehen über die Spec |
-| Evals | Suite, die bei jeder Änderung an Skills läuft (S. 34–35) | kein Element | Probe und Abnahmetest auf jedem Kandidaten |
-| Review-Regel | Regeln für das Review jedes Pull Requests (S. 38–39) | kein Element | — (Stufe 5, nicht in 0.1) |
+| Evals | Suite, die bei jeder Änderung an Skills läuft (S. 34–35); Test, ob ein Skill auslöst (S. 25) | kein Element; Wunsch W76 | Probe und Abnahmetest auf jedem Kandidaten; bei einer neuen Regel nur die Prüfung, dass sie im Master-Kontext steht |
+| Review-Regel | Regeln für das Review jedes Pull Requests (S. 38–39) | kein Element; Wunsch W77 | — (Stufe 5, kommt später) |
 | Dateien für den Host | `CLAUDE.md` (S. 23) | nur der Masterspace; für den Host nur `.claude/skills/` als Build-Output (Spec 01) | Praxis *Masterspace* |
-| Auslöser und Messen | Überwachung startet einen neuen Kreislauf; Früh- und Spätindikatoren je Stufe (S. 48–51) | kein Element | — (Stufe 6, nicht in 0.1) |
+| Auslöser | die Annahme der Absicht startet die Spec ohne Zutun (S. 16); Überwachung startet einen neuen Kreislauf (S. 48–51) | kein Element | der User stößt jeden Schritt an |
+| Messen | Früh- und Spätindikatoren je Stufe (S. 48–51) | kein Element | die Indikatoren des Plays *Requirements & design* aus `git log` (Praxis *Spezifikation*); die übrigen fehlen |
+| fremdes Repo begleiten | Arbeit im Repo des Produkts | ein Assistent wirkt nur in einem Projekt mit `@/`; Wunsch W78 | Pakete entstehen im Konzeptprojekt |
+
+Die Wünsche W74–W79 sind dem Kernel von AIBOS als ein Bündel übergeben. Ob und wann sie kommen, entscheidet AIBOS, nicht du.
 
 ## Wie du eine Lücke benennst
 
