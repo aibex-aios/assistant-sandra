@@ -37,7 +37,7 @@ Ein Skill der Assistentin Sandra. Er **liest** das Paket-Repo und schreibt nur `
 | Neutralität | `grep -rn` im Repo nach `.claude` und `CLAUDE.md`: Treffer nur, wo eine Lücke beschrieben wird; keine Datei und kein Ordner eines Hosts |
 | Lizenz | nach den Vorgaben des Users; bei Apache-2.0 `LICENSE` und `NOTICE` vorhanden |
 | Inhalt | keine Memos, Notizen, Testdaten, `.DS_Store`, Geheimnisse; `README.md` vorhanden |
-| Paket-Spec | Elemente, Verhalten und Grenzen wie in `spec.md`; Abnahmetest in `spec.md` vorhanden |
+| Paket-Spec | Elemente, Verhalten und Grenzen wie in `spec.md`, auch die Entscheidungen zu den Bedenken; Abnahmetest in `spec.md` vorhanden |
 
 Zähle und suche, statt zu schätzen; nenne zu jedem Befund Datei und Zeile.
 
@@ -52,7 +52,9 @@ Zeig den Bericht im Chat, dann den Plan: `test.md` im Durchlauf neu bzw. fortges
 title: "Prüfbericht — <paket> <x.y.z>"
 date: JJJJ-MM-TT
 package: <paket> <x.y.z>
+commit: <sha>
 result: ohne Befund | Befunde
+status: Entwurf
 ---
 
 Geprüfter Stand: Commit <sha> im Paket-Repo
@@ -66,8 +68,8 @@ Geprüfter Stand: Commit <sha> im Paket-Repo
 ```
 
 - `result: ohne Befund` nur, wenn kein Block einen Befund hat und der Arbeitsbaum committet ist.
-- Gibt es schon ein `test.md`, schreibst du es für den neuen Commit fort; frühere Fassungen stehen in Git.
-- Commit: „SDLC NN: test.md (<ergebnis>)". Nenne den Commit. Frag vor dem Schreiben mit der Auswahl „Schreiben (Commit)“ (Empfohlen), „Schreiben (Commit, Sync)“, „Korrigieren“ (Leitfaden, *Rückfragen*, Punkt 10).
+- Gibt es schon ein `test.md`, schreibst du es für den neuen Commit fort, wieder mit `status: Entwurf`; frühere Fassungen stehen in Git. `Angenommen` setzt erst die Abnahme (`sandra-probe`).
+- Commit: „SDLC NN: test.md (<ergebnis>)". Nenne den Commit. Frag vor dem Schreiben mit der Auswahl „Schreiben (Commit)“ (Empfohlen), „Schreiben (Commit, Sync)“ (nur unter der Bedingung von Punkt 10: Workspace mit `sync` und eigenes Remote des Projekts), „Korrigieren“ (Leitfaden, *Rückfragen*, Punkt 10).
 
 ## 4. Befunde beheben
 
