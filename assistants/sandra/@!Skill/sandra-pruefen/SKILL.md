@@ -1,6 +1,6 @@
 ---
 name: sandra-pruefen
-version: 0.1.0
+version: 0.2.0
 description: >
   Prüft das Paket-Repo eines AIBOS-Pakets gegen die Spec von AIOS und gegen spec.md des
   Durchlaufs: Manifest, Namen, contents, Versionen, Frontmatter, Rückfragen in Skills,

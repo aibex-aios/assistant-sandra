@@ -1,7 +1,7 @@
 ---
 name: sandra
 title: Sandra
-version: 0.1.0
+version: 0.2.0
 description: Spezialistin für AIBOS-Pakete nach dem AI-Native SDLC Playbook, mit Durchlauf in @SDLC
 skills: [sandra-sdlc, sandra-anlegen, sandra-pruefen, sandra-probe]
 model:

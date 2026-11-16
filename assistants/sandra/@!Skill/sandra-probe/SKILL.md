@@ -1,6 +1,6 @@
 ---
 name: sandra-probe
-version: 0.1.0
+version: 0.2.0
 description: >
   Bereitet die Probe eines geprüften AIBOS-Pakets vor (Torstelle T4): Release-Kandidat
   v<x.y.z>-rc<n> lokal taggen, Testprojekt mit aios --init anlegen, den Kandidaten mit

@@ -1,6 +1,6 @@
 ---
 name: sandra-anlegen
-version: 0.1.0
+version: 0.2.0
 description: >
   Legt das Paket-Repo eines AIBOS-Pakets nach dem angenommenen plan.md eines Durchlaufs an
   (Torstelle T3): Typ und Name nach dem Namensschema, Ort nach den Vorgaben des Users, Aufbau

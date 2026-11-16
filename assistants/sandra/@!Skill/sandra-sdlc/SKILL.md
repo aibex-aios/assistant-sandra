@@ -1,6 +1,6 @@
 ---
 name: sandra-sdlc
-version: 0.1.0
+version: 0.2.0
 description: >
   Führt einen Durchlauf des SDLC für ein AIBOS-Paket in @SDLC/: Durchlauf anlegen oder
   fortsetzen, intent.md mit dem User erarbeiten, spec.md nach der angenommenen Absicht (T1),
